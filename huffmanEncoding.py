@@ -82,9 +82,10 @@ if len(converted_list) > 1:
     print("\nThis is the table of huffman : \n_____________________")
     traverse(minHeap)
     print("---------------------\n")
-    print("Encoded Message : ")
+    msg = ""
     for i in message:
-        print(huffmanCodeIndex[i], end=" ")
+        msg = msg + (huffmanCodeIndex[i]+" ")
+    print("Encoded Message : \n{}\n".format(msg))
     print("\ntotal no of characters in message : ", len(message))
     print("Total no of bits want in ASCII : ", len(message) * 8)
     huffmanCodeSize = 0
@@ -92,6 +93,5 @@ if len(converted_list) > 1:
         huffmanCodeSize = huffmanCodeSize + y * len(huffmanCodeIndex[x])
     print("After Huffman coding, total number of bits needed :", huffmanCodeSize)
     print("Number of bits that were saved : ", len(message) * 8 - huffmanCodeSize)
-
 else:
     print(converted_list[0].character, "\t", 1)
